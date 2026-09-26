@@ -7,12 +7,17 @@
 ```
 ------------------------------------------------------------------------------------------
 Question 1a: Write a procedure to generate random samples according to a normal distribution N(µ,Σ) in d dimensions.
-z=[ 0.18634635 -0.50774834]
-covar_matrix=[[2.   0.5 ]
- [0.5  0.25]]
-A=[[1.41421356 0.        ]
- [0.35355339 0.35355339]]
-Az=[ 0.26353354 -0.11363276]
+z=[ 2.12242832 -1.14598467]
+covariance_matrix=[[4.         1.24285714]
+ [1.24285714 0.39714286]]
+A=[[2.         0.        ]
+ [0.62142857 0.10473484]]
+Az=[4.24485664 1.19891307]
+Observed bass length: [12, 13, 14, 15, 16, 17, 18]
+Observed bass weight: [0.8, 1.0, 1.2, 1.5, 1.8, 2.2, 2.7]
+bass length mean: 15.0
+bass weight mean: 1.5999999999999999
+The newly generated bass: length=19.244856642579652inches, weight=2.798913072811896lbs
 ------------------------------------------------------------------------------------------
 Question 1b: Write a procedure to calculate the discriminant function (of the form given in Eq. 47) for a given normal distribution and prior probability P(wi).
 For this HW question I will be using 2 classes: Salmon and Bass. I will be using 2 inputs: Length and weight. I will be using 'made-up' length and weights for each fish for training data.

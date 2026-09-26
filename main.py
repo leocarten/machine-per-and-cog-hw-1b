@@ -53,12 +53,16 @@ class Homework:
             print(f"z={z}")
 
             # Step 2: Reshape datapoints in 'z' to have a relationship similiar to Σ
-            # for simplicity sake, i am going to assign the covariance_matrix as: [ 2, 0.5, 0.5, 0.25 ]
-            covariance_matrix = np.array([
-                                            [2, 0.5],
-                                            [0.5, 0.25]
-                                        ]) # 2=variance of fish length, 0.5=relationship between length and weight, 0.25=varience of fish weight
-            print(f"covar_matrix={covariance_matrix}")
+            bass_length = [12, 13, 14, 15, 16, 17, 18]        # inches
+            bass_weight = [0.8, 1.0, 1.2, 1.5, 1.8, 2.2, 2.7] # pounds
+            bass_data = np.array([
+                bass_length,
+                bass_weight
+            ])
+            
+            covariance_matrix = np.cov(bass_data, bias=True)
+            print(f"covariance_matrix={covariance_matrix}")
+
             # now, find A such that AA' = Σ
             # it's important to knpw that A is the "tool" we use to reshape the data points in z to match the covariance in Σ
             A = np.linalg.cholesky(covariance_matrix)
@@ -67,6 +71,21 @@ class Homework:
             # Step 3: calculate Az. Az is just taking the random sample (z) and re-shaping it to match the specified covariance of the variables
             Az = A @ z
             print(f"Az={Az}")
+
+            # step 4: add the mean to shift all the points to the "center"
+            bass_length_mean = sum(bass_length) / len(bass_length)
+            bass_weight_mean = sum(bass_weight) / len(bass_weight)
+            bass_mean = np.array([
+                bass_length_mean,
+                bass_weight_mean
+            ])
+            final_step = bass_mean + Az
+
+            print(f"Observed bass length: {bass_length}")
+            print(f"Observed bass weight: {bass_weight}")
+            print(f"bass length mean: {bass_length_mean}")
+            print(f"bass weight mean: {bass_weight_mean}")
+            print(f"The newly generated bass: length={final_step[0]}inches, weight={final_step[1]}lbs")
 
     def g(self, _class, features, part_of_equation):
          score = part_of_equation[0]@part_of_equation[1] - part_of_equation[2] - part_of_equation[3] + part_of_equation[4]
