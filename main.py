@@ -227,8 +227,8 @@ class Homework:
         sigma_salmon = np.cov(salmon_data, bias=True)
         sigma_salmon_inv = np.linalg.inv(sigma_salmon)
 
-        # NOW, we are seeing a new fish with length 22 inches, weight 4.9 lbs
-        x = np.array([28, 9.28]) 
+        # NOW, we are seeing a new fish with length 24 inches, weight 10 lbs
+        x = np.array([24, 10]) 
 
         mahalanobis_distance = np.sqrt( (x-salmon_mean).T @ sigma_salmon_inv @ (x-salmon_mean) )
 
@@ -253,5 +253,6 @@ def main():
 
     print(hw.programOutputDelimiter())
     hw.question_1d()
+    print(hw.programOutputDelimiter())
 
 main()
