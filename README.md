@@ -7,19 +7,19 @@
 ```
 ------------------------------------------------------------------------------------------
 Question 1a: Write a procedure to generate random samples according to a normal distribution N(µ,Σ) in d dimensions.
-z=[-1.41320548  0.56643026]
+z=[ 0.29283294 -0.80456381]
 covariance_matrix=[[4.         1.24285714]
  [1.24285714 0.39714286]]
 A=[[2.         0.        ]
  [0.62142857 0.10473484]]
-Az=[-2.82641096 -0.81888128]
+Az=[0.58566588 0.09770889]
 Observed bass length: [12, 13, 14, 15, 16, 17, 18]
 Observed bass weight: [0.8, 1.0, 1.2, 1.5, 1.8, 2.2, 2.7]
 bass length mean: 15.0
 bass weight mean: 1.5999999999999999
 Covariance matrix=[[4.         1.24285714]
  [1.24285714 0.39714286]]
-The newly generated bass: length=12.173589041283295inches, weight=0.7811187229225608lbs
+The newly generated bass: length=15.58566587722592inches, weight=1.69770888890323lbs
 ------------------------------------------------------------------------------------------
 Question 1b: Write a procedure to calculate the discriminant function (of the form given in Eq. 47) for a given normal distribution and prior probability P(wi).
 For this HW question I will be using 2 classes: Salmon and Bass. I will be using 2 inputs: Length and weight. I will be using 'made-up' length and weights for each fish for training data.
@@ -29,13 +29,14 @@ Salmon length mean: 28.0
 Salmon weight mean: 9.285714285714286
 Observed bass length: [12, 13, 14, 15, 16, 17, 18]
 Observed bass weight: [0.8, 1.0, 1.2, 1.5, 1.8, 2.2, 2.7]
-bass length mean: 15.0
-bass weight mean: 1.5999999999999999
+Bass length mean: 15.0
+Bass weight mean: 1.5999999999999999
+The newly observed fix has length=22.0inches, weight=4.9lbs
 Prior probability for salmon: 60.0%
 Prior probability for bass: 40.0%
 Score for class 'Salmon' based on inputs length=22.0 and weight=4.9: -25.552391231951127
 Score for class 'Bass' based on inputs length=22.0 and weight=4.9: -65.00494505866953
-Based on scores, we will assign inputs length=22.0 and weight=4.9 to Salmon class.
+Based on scores, we will assign the new fish (length=22.0 and weight=4.9) to Salmon class.
 ------------------------------------------------------------------------------------------
 Question 1c: Write a procedure to calculate the Euclidean distance between two arbitrary points.
 let p=(2,6)
