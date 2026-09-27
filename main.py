@@ -227,7 +227,7 @@ class Homework:
             # the Mahalanobis distance tells us how far away a data point is from the clustering of data, which takes into account the mean and variance of data
                 # it says: How far away is it relative to what is normal for this group
             # this is an important distinction from euclidean distance bc mahalabonis takes into account vairance
-            # basically, this can help us identify anomolies in data patterns
+            # basically, this can help us identify anomolies in data patterns. if the mahalanobis_distance is 0, it means it is basially the mean. if it's relatively small, it means it fits within the "cluster". if the distance is huge, it's probably an anomoly.
         
         # formula: sqrt[ (x-µ)T Σ-1 (x-µ) ] -> basically (inputs - mean)' * inverse_of_covariance * (inputs - mean)
             # x -> the point you want to test (the input)
