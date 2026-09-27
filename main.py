@@ -85,6 +85,7 @@ class Homework:
             print(f"Observed bass weight: {bass_weight}")
             print(f"bass length mean: {bass_length_mean}")
             print(f"bass weight mean: {bass_weight_mean}")
+            print(f"Covariance matrix={covariance_matrix}")
             print(f"The newly generated bass: length={final_step[0]}inches, weight={final_step[1]}lbs")
 
     def g(self, _class, features, part_of_equation):
@@ -127,11 +128,12 @@ class Homework:
         bass_weight_mean = sum(bass_weight) / len(bass_weight)
         print(f"Observed bass length: {bass_length}")
         print(f"Observed bass weight: {bass_weight}")
-        print(f"bass length mean: {bass_length_mean}")
-        print(f"bass weight mean: {bass_weight_mean}")
+        print(f"Bass length mean: {bass_length_mean}")
+        print(f"Bass weight mean: {bass_weight_mean}")
 
         # NOW, we are seeing a new fish with length 22 inches, weight 4.9 lbs
         x = np.array([22, 4.9]) 
+        print(f"The newly observed fix has length={x[0]}inches, weight={x[1]}lbs")
 
         salmon_mean = np.array([
             salmon_length_mean,
@@ -199,9 +201,9 @@ class Homework:
 
         # print results
         if salmon_score > bass_score:
-            print(f"Based on scores, we will assign inputs length={x[0]} and weight={x[1]} to Salmon class.")
+            print(f"Based on scores, we will assign the new fish (length={x[0]} and weight={x[1]}) to Salmon class.")
         else:
-            print(f"Based on scores, we will assign inputs length={x[0]} and weight={x[1]} to Bass class.")
+            print(f"Based on scores, we will assign the new fish (length={x[0]} and weight={x[1]}) to Bass class.")
 
     def question_1c(self):
         print("Question 1c: Write a procedure to calculate the Euclidean distance between two arbitrary points.")
